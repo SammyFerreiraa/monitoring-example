@@ -1,3 +1,9 @@
+import { Dashboard } from '@/templates'
+
 export default function Home() {
-  return <main></main>
+  return (
+    <main className=" flex min-h-screen items-center justify-center">
+      <Dashboard />
+    </main>
+  )
 }
