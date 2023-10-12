@@ -1,0 +1,26 @@
+[
+  {
+    "codigo": "QXD0001",
+    "nome": "Matemática"
+  },
+  {
+    "codigo": "QXD0002",
+    "nome": "Física"
+  },
+  {
+    "codigo": "QXD0003",
+    "nome": "Química"
+  },
+  {
+    "codigo": "QXD0004",
+    "nome": "História"
+  },
+  {
+    "codigo": "QXD0005",
+    "nome": "Biologia"
+  },
+  {
+    "codigo": "QXD0006",
+    "nome": "Inglês"
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "email": "sammy@gmail.com",
+    "password": "123",
+    "name": "Sammy Ferreira",
+    "age": 17,
+    "monitor": true,
+    "monitoring_disciplines": [
+      "QXD0001", "QXD0002", "QXD0003"
+    ],
+    "disciplines": [
+      "QXD0004"
+    ]
+  },
+
+  {
+    "email": "natan@gmail.com",
+    "password": "123",
+    "name": "Nathan Lucena",
+    "age": 18,
+    "monitor": false,
+    "monitoring_disciplines": [],
+    "disciplines": [
+      "QXD0001", "QXD0002", "QXD0003"
+    ]
+  }
+]
