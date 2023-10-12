@@ -1,1 +1,7 @@
-GET http://localhost:3000/api/router
+POST https://to-do-mountains.onrender.com/auth/login
+Content-Type: application/json
+
+{
+  "email": "sammy1@gmail.com",
+  "password": "Sammy123"
+}
