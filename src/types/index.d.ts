@@ -1,9 +1,4 @@
-export type LabelInputProps = {
-  label: string
-  type: string
-  htmlFor?: string | undefined
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
-}
+import { z } from 'zod'
 
 export type UserProps = {
   email: string
@@ -26,3 +21,5 @@ export interface NextAuthSessionProviderProps {
 export interface PrivateLayoutProps {
   children: React.ReactNode
 }
+
+export type FormProps = z.infer<typeof schemaForm>
