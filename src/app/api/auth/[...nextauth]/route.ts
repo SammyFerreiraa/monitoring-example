@@ -12,14 +12,20 @@ const nextAuthOptions: NextAuthOptions = {
       },
 
       async authorize(credentials) {
-        const res = axios.post(
-          'https://to-do-mountains.onrender.com/auth/login',
-          {
-            email: credentials?.email,
-            password: credentials?.password,
-          },
-        )
-        const user = (await res).data
+        const loginUrl = process.env.NEXT_PUBLIC_URL_LOGIN || ''
+
+        const res = axios.post(loginUrl, {
+          email: credentials?.email,
+          password: credentials?.password,
+        })
+        const a = (await res).data
+
+        const user = {
+          id: '1',
+          name: 'Sammy',
+          email: 'sammyfe2021@gmail.com',
+          jwt: a,
+        }
 
         if (user && (await res).status === 200) {
           return user
@@ -31,6 +37,21 @@ const nextAuthOptions: NextAuthOptions = {
 
   pages: {
     signIn: '/login',
+  },
+
+  callbacks: {
+    async jwt({ token, user }) {
+      if (user) {
+        token = { ...user }
+      }
+      return token
+    },
+
+    async session({ session, token }) {
+      session = token as any // eslint-disable-line @typescript-eslint/no-explicit-any
+      console.log('session', { session, token })
+      return session
+    },
   },
 }
 
