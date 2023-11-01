@@ -1,21 +1,16 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
-import { useRouter } from 'next/navigation'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { useLoginUser } from '@/hooks/useLoginUser'
 import Link from 'next/link'
 
 const LoginPage = () => {
-  const router = useRouter()
-
   const { handleSubmit, register, authLogin } = useLoginUser()
 
   const handleFormSubmit = handleSubmit(async (FormData) => {
-    if (await authLogin(FormData)) {
-      router.replace('/dashboard')
-    }
+    authLogin(FormData)
   })
 
   return (

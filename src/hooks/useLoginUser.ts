@@ -31,9 +31,10 @@ export const useLoginUser = () => {
     })
 
     if (result?.error) {
-      return false
+      return
     }
-    return true
+
+    window.location.href = '/dashboard'
   }
 
   return {
