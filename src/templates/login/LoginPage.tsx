@@ -10,22 +10,12 @@ import { useLoginUser } from '@/hooks/useLoginUser'
 const LoginPage = () => {
   const router = useRouter()
 
-  const { handleSubmit, register } = useLoginUser()
+  const { handleSubmit, register, authLogin } = useLoginUser()
 
   const handleFormSubmit = handleSubmit(async (FormData) => {
-    const { email, password } = FormData.credentials
-
-    const result = await signIn('credentials', {
-      email,
-      password,
-      redirect: false,
-    })
-
-    if (result?.error) {
-      return false
+    if (await authLogin(FormData)) {
+      router.replace('/dashboard')
     }
-
-    router.replace('/dashboard')
   })
 
   return (

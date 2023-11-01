@@ -1,4 +1,4 @@
-import { RegisterPage } from "@/templates"
+import { RegisterPage } from '@/templates'
 
 const page = () => {
   return (
