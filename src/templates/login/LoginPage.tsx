@@ -8,14 +8,10 @@ import { useLoginUser } from '@/hooks/useLoginUser'
 import Link from 'next/link'
 
 const LoginPage = () => {
-  const router = useRouter()
-
   const { handleSubmit, register, authLogin } = useLoginUser()
 
   const handleFormSubmit = handleSubmit(async (FormData) => {
-    if (await authLogin(FormData)) {
-      router.replace('/dashboard')
-    }
+    authLogin(FormData)
   })
 
   return (
