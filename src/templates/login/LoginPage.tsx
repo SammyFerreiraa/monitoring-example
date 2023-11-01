@@ -8,12 +8,12 @@ import { Input } from '@/components/ui/input'
 import { useLoginUser } from '@/hooks/useLoginUser'
 
 const LoginPage = () => {
-  const { handleSubmit, register, errors } = useLoginUser()
-
   const router = useRouter()
 
-  const handleFormSubmit = handleSubmit(async (formData) => {
-    const { email, password } = formData.credentials
+  const { handleSubmit, register } = useLoginUser()
+
+  const handleFormSubmit = handleSubmit(async (FormData) => {
+    const { email, password } = FormData.credentials
 
     const result = await signIn('credentials', {
       email,
@@ -22,8 +22,7 @@ const LoginPage = () => {
     })
 
     if (result?.error) {
-      console.log(result)
-      return
+      return false
     }
 
     router.replace('/dashboard')
@@ -39,30 +38,20 @@ const LoginPage = () => {
           <div>
             <Label htmlFor="email">Email</Label>
             <Input
-              className="w-96"
               {...register('credentials.email')}
+              className="w-96"
               type="text"
               autoComplete="off"
             />
-            {errors?.credentials?.email?.message && (
-              <p className="pt-1 text-center text-sm text-red-700">
-                {errors?.credentials?.email?.message}
-              </p>
-            )}
           </div>
           <div>
             <Label htmlFor="password">Password</Label>
             <Input
-              className="w-96"
               {...register('credentials.password')}
+              className="w-96"
               type="password"
               autoComplete="off"
             />
-            {errors?.credentials?.password?.message && (
-              <p className="pt-1 text-center text-sm text-red-700">
-                {errors?.credentials?.password?.message}
-              </p>
-            )}
           </div>
         </div>
         <Button type="submit">Login</Button>
