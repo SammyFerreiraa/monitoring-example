@@ -22,4 +22,5 @@ export interface PrivateLayoutProps {
   children: React.ReactNode
 }
 
-export type FormProps = z.infer<typeof schemaForm>
+export type FormLoginProps = z.infer<typeof schemaLoginForm>
+export type FormRegisterProps = z.infer<typeof schemaRegisterForm>

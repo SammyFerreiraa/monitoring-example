@@ -1,7 +1,7 @@
-import { schemaForm } from '@/templates/login/schema'
+import { schemaLoginForm } from '@/templates/login/schema'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
-import { FormProps } from '@/types'
+import { FormLoginProps } from '@/types'
 import { signIn } from 'next-auth/react'
 
 export const useLoginUser = () => {
@@ -9,10 +9,10 @@ export const useLoginUser = () => {
     handleSubmit,
     register,
     formState: { errors },
-  } = useForm<FormProps>({
+  } = useForm<FormLoginProps>({
     criteriaMode: 'all',
     mode: 'all',
-    resolver: zodResolver(schemaForm),
+    resolver: zodResolver(schemaLoginForm),
     defaultValues: {
       credentials: {
         email: '',
@@ -21,7 +21,7 @@ export const useLoginUser = () => {
     },
   })
 
-  const authLogin = async (FormData: FormProps) => {
+  const authLogin = async (FormData: FormLoginProps) => {
     const { email, password } = FormData.credentials
 
     const result = await signIn('credentials', {

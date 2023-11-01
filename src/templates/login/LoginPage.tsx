@@ -1,11 +1,11 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
-import { signIn } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { useLoginUser } from '@/hooks/useLoginUser'
+import Link from 'next/link'
 
 const LoginPage = () => {
   const router = useRouter()
@@ -44,7 +44,12 @@ const LoginPage = () => {
             />
           </div>
         </div>
-        <Button type="submit">Login</Button>
+        <div className="flex items-center justify-center gap-5">
+          <Button type="submit">Login</Button>
+          <Button>
+            <Link href={'/register'}>Register</Link>
+          </Button>
+        </div>
       </form>
     </div>
   )
