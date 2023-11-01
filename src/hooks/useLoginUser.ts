@@ -1,4 +1,4 @@
-import { schemaLoginForm } from '@/templates/login/schema'
+import { schemaLoginForm } from '@/templates/login/schemaLoginForm'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { FormLoginProps } from '@/types'

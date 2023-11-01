@@ -47,7 +47,7 @@ const LoginPage = () => {
         <div className="flex items-center justify-center gap-5">
           <Button type="submit">Login</Button>
           <Button>
-            <Link href={'/register'}>Register</Link>
+            <Link href={'/register'}>Registrar</Link>
           </Button>
         </div>
       </form>
