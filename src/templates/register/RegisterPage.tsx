@@ -14,7 +14,7 @@ const RegisterPage = () => {
 
   const handleFormSubmit = handleSubmit(async (FormData) => {
     if (await registerUser(FormData)) {
-      router.replace('/login')
+      router.replace('/')
     }
   })
 
@@ -81,7 +81,7 @@ const RegisterPage = () => {
         </div>
         <div className="flex items-center justify-center gap-5">
           <Button type="submit">Cadastrar</Button>
-          <Link href={'/login'}>
+          <Link href={'/'}>
             <Button>Logar</Button>
           </Link>
         </div>
