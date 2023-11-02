@@ -61,9 +61,14 @@ const LoginPage = () => {
           <div className="h-[1px] w-24 bg-gray-100"></div>
         </div>
 
-        <Button className="mt-7 w-[48%] bg-gray-900 font-light text-white   shadow-[6.0px_10.0px_10.0px_rgba(0,0,0,0.38)]  transition-colors hover:bg-emerald-500 hover:shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)]">
-          <Link href={'/register'}>Registrar</Link>
-        </Button>
+        <Link
+          href={'/register'}
+          className="mt-7 flex w-full items-center justify-center"
+        >
+          <Button className="w-[48%] bg-gray-900 font-light text-white   shadow-[6.0px_10.0px_10.0px_rgba(0,0,0,0.38)]  transition-colors hover:bg-emerald-500 hover:shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)]">
+            Registrar
+          </Button>
+        </Link>
       </div>
     </div>
   )
