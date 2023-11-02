@@ -14,7 +14,7 @@ const RegisterPage = () => {
 
   const handleFormSubmit = handleSubmit(async (FormData) => {
     if (await registerUser(FormData)) {
-      router.replace('/login')
+      router.replace('/')
     }
   })
 
