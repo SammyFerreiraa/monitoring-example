@@ -1,7 +1,6 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
-import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { useLoginUser } from '@/hooks/useLoginUser'
 import Link from 'next/link'
@@ -14,28 +13,26 @@ const LoginPage = () => {
   })
 
   return (
-    <div>
+    <div className="h-[calc(100vh-250px)] w-[calc(30vw-20px)]  rounded-3xl bg-teal-800">
       <form
         onSubmit={handleFormSubmit}
         className="flex flex-col items-center justify-center gap-8"
       >
         <div className="flex flex-col items-center justify-center gap-4">
           <div>
-            <Label htmlFor="email">Email</Label>
             <Input
               {...register('credentials.email')}
-              className="w-96"
               type="text"
               autoComplete="off"
+              placeholder="Email"
             />
           </div>
           <div>
-            <Label htmlFor="password">Password</Label>
             <Input
               {...register('credentials.password')}
-              className="w-96"
               type="password"
               autoComplete="off"
+              placeholder="Senha"
             />
           </div>
         </div>
